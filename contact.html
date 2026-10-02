@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Writings | Jacob's Essays</title>
+  <title>Contact | Jacob's Essays</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
@@ -15,7 +15,7 @@
   <nav class="sidebar">
     <a class="site-name" href="index.html">Jacob's Essays</a>
     <div class="nav">
-      <a href="index.html" class="active">
+      <a href="index.html">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M4 6h16M4 11h16M4 16h10"/></svg>
         Writings
       </a>
@@ -27,7 +27,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c1.2-3.5 4-5 7-5s5.8 1.5 7 5"/></svg>
         About
       </a>
-      <a href="contact.html">
+      <a href="contact.html" class="active">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="2"/><path d="M4 7l8 6 8-6"/></svg>
         Contact
       </a>
@@ -39,31 +39,21 @@
   <main class="content">
     <div class="content-inner">
 
-      <h1 class="page-title">Writings</h1>
-      <p class="lede">Essays, newest first.</p>
+      <h1 class="page-title">Contact</h1>
+      <p class="lede">Questions, thoughts on an essay, or just saying hi.</p>
 
-      <ol class="feed">
-
-        <!-- To add a new essay: copy one <li> block below,
-             paste it at the TOP of this list, and edit it. -->
-
-        <li class="entry">
-          <time datetime="2026-10-01">Oct 1, 2026</time>
-          <div>
-            <h2><a href="#">My second essay</a></h2>
-            <p>A sentence or two about what this essay covers.</p>
-          </div>
+      <!-- CONTACT: replace the placeholders. In an email link,
+           change the address in BOTH places (href and the text). -->
+      <ul class="detail-list">
+        <li>
+          <span class="detail-label">Email</span>
+          <a href="mailto:you@example.com">you@example.com</a>
         </li>
-
-        <li class="entry">
-          <time datetime="2026-09-20">Sep 20, 2026</time>
-          <div>
-            <h2><a href="#">My first essay</a></h2>
-            <p>Another short summary goes here.</p>
-          </div>
+        <li>
+          <span class="detail-label">Elsewhere</span>
+          <a href="#">Link to a social profile</a>
         </li>
-
-      </ol>
+      </ul>
 
     </div>
   </main>

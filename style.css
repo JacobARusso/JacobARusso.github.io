@@ -1,0 +1,273 @@
+/* =========================================================
+   Jacob's Essays — shared styles for every page
+   ========================================================= */
+
+/* ---------- Colors and fonts, defined once ----------
+   These are "CSS variables". Change a color here and it
+   changes everywhere it's used. */
+:root {
+  --paper:     #F5F6F3;  /* page background */
+  --sidebar:   #E8ECE6;  /* sidebar background */
+  --ink:       #1C2321;  /* main text */
+  --muted:     #66706B;  /* dates, small text */
+  --rule:      #D2D8D0;  /* thin lines */
+  --pine:      #2F5D50;  /* accent color */
+  --pine-tint: #D8E3DC;  /* light accent for the active link */
+
+  --serif: "Newsreader", Georgia, serif;
+  --sans:  "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  display: flex;               /* sidebar and content side by side */
+  min-height: 100vh;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1.125rem;
+  line-height: 1.65;
+}
+
+a { color: var(--pine); }
+
+/* Visible outline when someone navigates with the keyboard */
+a:focus-visible {
+  outline: 2px solid var(--pine);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ---------- Sidebar ---------- */
+.sidebar {
+  width: 260px;
+  flex-shrink: 0;              /* never let it get squished */
+  height: 100vh;
+  position: sticky;            /* stays put while the page scrolls */
+  top: 0;
+  display: flex;
+  flex-direction: column;      /* stack everything vertically */
+  padding: 1.5rem 0.875rem;
+  background: var(--sidebar);
+  border-right: 1px solid var(--rule);
+  font-family: var(--sans);
+}
+
+.site-name {
+  display: block;
+  padding: 0 0.75rem 1.75rem;
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.nav a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.55rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.nav a:hover { background: rgba(47, 93, 80, 0.08); }
+
+/* The page you're currently on */
+.nav a.active {
+  background: var(--pine-tint);
+  color: var(--pine);
+  font-weight: 600;
+}
+
+.nav svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.sidebar-footer {
+  margin-top: auto;            /* pushes this to the bottom */
+  padding: 0 0.75rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* ---------- Main content area ---------- */
+.content {
+  flex: 1;
+  padding: 4.5rem 2rem 6rem;
+}
+
+.content-inner {
+  max-width: 40rem;            /* comfortable reading width */
+  margin: 0 auto;
+}
+
+.page-title {
+  margin: 0 0 0.5rem;
+  font-size: 2.75rem;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+
+.lede {
+  margin: 0 0 3.5rem;
+  color: var(--muted);
+  font-size: 1.2rem;
+}
+
+/* ---------- Writings feed (a timeline) ---------- */
+.feed {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+/* The vertical thread connecting every essay */
+.feed::before {
+  content: "";
+  position: absolute;
+  top: 0.6rem;
+  bottom: 2.75rem;
+  left: 7.75rem;
+  width: 1px;
+  background: var(--rule);
+}
+
+.entry {
+  display: grid;
+  grid-template-columns: 6.5rem 1fr;  /* date column | text column */
+  column-gap: 2.5rem;
+  padding-bottom: 2.75rem;
+  position: relative;
+}
+
+/* The dot on the thread for each essay */
+.entry::before {
+  content: "";
+  position: absolute;
+  left: calc(7.75rem - 4px);
+  top: 0.55rem;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--paper);
+  border: 2px solid var(--pine);
+}
+
+/* The newest essay gets a filled dot */
+.entry:first-child::before { background: var(--pine); }
+
+.entry time {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-align: right;
+  padding-top: 0.3rem;
+}
+
+.entry h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.entry h2 a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.entry h2 a:hover {
+  color: var(--pine);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.entry p {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* ---------- About and Contact pages ---------- */
+.prose p { margin: 0 0 1.25rem; }
+
+.section-title {
+  margin: 3rem 0 1rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.detail-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--rule);
+}
+
+.detail-list li {
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  column-gap: 1.5rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.detail-label {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--muted);
+  padding-top: 0.25rem;
+}
+
+/* ---------- Phones and small screens ----------
+   Everything inside this block only applies when the
+   window is 760px wide or less. */
+@media (max-width: 760px) {
+  body { flex-direction: column; }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    flex-direction: row;       /* sidebar becomes a top bar */
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    border-right: none;
+    border-bottom: 1px solid var(--rule);
+    overflow-x: auto;
+    z-index: 1;
+  }
+
+  .site-name { padding: 0; font-size: 1.2rem; white-space: nowrap; }
+  .nav { flex-direction: row; }
+  .nav a { white-space: nowrap; }
+  .nav svg { display: none; }
+  .sidebar-footer { display: none; }
+
+  .content { padding: 2.5rem 1.25rem 4rem; }
+  .page-title { font-size: 2.1rem; }
+
+  .feed::before { left: 4px; }
+  .entry { grid-template-columns: 1fr; padding-left: 1.75rem; }
+  .entry::before { left: 0; }
+  .entry time { text-align: left; padding-top: 0; }
+
+  .detail-list li { grid-template-columns: 1fr; }
+}

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Writings | Jacob's Essays</title>
+  <title>About | Jacob's Essays</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
@@ -15,7 +15,7 @@
   <nav class="sidebar">
     <a class="site-name" href="index.html">Jacob's Essays</a>
     <div class="nav">
-      <a href="index.html" class="active">
+      <a href="index.html">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M4 6h16M4 11h16M4 16h10"/></svg>
         Writings
       </a>
@@ -23,7 +23,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M12 9v6M9 12h6"/></svg>
         Filler
       </a>
-      <a href="about.html">
+      <a href="about.html" class="active">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c1.2-3.5 4-5 7-5s5.8 1.5 7 5"/></svg>
         About
       </a>
@@ -39,31 +39,32 @@
   <main class="content">
     <div class="content-inner">
 
-      <h1 class="page-title">Writings</h1>
-      <p class="lede">Essays, newest first.</p>
+      <h1 class="page-title">About</h1>
+      <p class="lede">Who I am and what I write about.</p>
 
-      <ol class="feed">
+      <!-- ABOUT ME: replace these paragraphs with your own. -->
+      <div class="prose">
+        <p>Write a few sentences introducing yourself here: who you are, where you're from, and what you like to think and write about.</p>
+        <p>Add a second paragraph if you want, like why you started this site or what readers can expect.</p>
+      </div>
 
-        <!-- To add a new essay: copy one <li> block below,
-             paste it at the TOP of this list, and edit it. -->
+      <h2 class="section-title">Credentials</h2>
 
-        <li class="entry">
-          <time datetime="2026-10-01">Oct 1, 2026</time>
-          <div>
-            <h2><a href="#">My second essay</a></h2>
-            <p>A sentence or two about what this essay covers.</p>
-          </div>
+      <!-- CREDENTIALS: each <li> is one row. Copy a row to add more. -->
+      <ul class="detail-list">
+        <li>
+          <span class="detail-label">Education</span>
+          <span>School name, degree or program, year</span>
         </li>
-
-        <li class="entry">
-          <time datetime="2026-09-20">Sep 20, 2026</time>
-          <div>
-            <h2><a href="#">My first essay</a></h2>
-            <p>Another short summary goes here.</p>
-          </div>
+        <li>
+          <span class="detail-label">Experience</span>
+          <span>Role or position, organization, years</span>
         </li>
-
-      </ol>
+        <li>
+          <span class="detail-label">Recognition</span>
+          <span>Award, publication, or achievement</span>
+        </li>
+      </ul>
 
     </div>
   </main>
