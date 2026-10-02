@@ -1,0 +1,62 @@
+body {
+  margin: 0;
+  display: flex;
+  font-family: Georgia, serif;
+  background: #faf9f6;
+  color: #222;
+}
+
+.sidebar {
+  width: 220px;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  padding: 24px;
+  box-sizing: border-box;
+  background: #f0eee9;
+  border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sidebar a {
+  color: #222;
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
+}
+
+.feed {
+  flex: 1;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+.essay-card {
+  padding: 24px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.essay-card h2 {
+  margin: 0 0 4px;
+}
+
+.essay-card h2 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.date {
+  color: #777;
+  font-size: 0.9rem;
+  margin: 0 0 8px;
+}
+
+.summary {
+  margin: 0;
+  line-height: 1.5;
+}
