@@ -271,3 +271,96 @@ a:focus-visible {
 
   .detail-list li { grid-template-columns: 1fr; }
 }
+
+/* ---------- Essay pages ---------- */
+.back-link {
+  display: inline-block;
+  margin-bottom: 2.5rem;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.back-link:hover { color: var(--pine); }
+
+.essay-header {
+  margin-bottom: 2.75rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.essay-header time {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.essay-body p { margin: 0 0 1.4rem; }
+
+.essay-body h2 {
+  margin: 2.75rem 0 1rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.essay-body blockquote {
+  margin: 2rem 0;
+  padding-left: 1.25rem;
+  border-left: 2px solid var(--pine);
+  font-style: italic;
+  color: var(--muted);
+}
+
+/* A small mark that shows the essay is finished */
+.essay-end {
+  margin-top: 3rem;
+  text-align: center;
+  color: var(--pine);
+  font-size: 1.25rem;
+}
+
+.essay-body h3 {
+  margin: 2rem 0 0.75rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--pine);
+}
+
+/* Photos inside essays */
+.essay-body figure {
+  margin: 2.25rem 0;
+}
+
+.essay-body figure img {
+  display: block;
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 6px;
+}
+
+.essay-body figcaption {
+  max-width: 480px;
+  margin: 0.75rem auto 0;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+/* Works cited: each source has a hanging indent */
+.works-cited {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+}
+
+.works-cited li {
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+  text-indent: -2rem;
+  overflow-wrap: anywhere;   /* long web addresses wrap instead of overflowing */
+}
